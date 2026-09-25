@@ -1,0 +1,96 @@
+/* =========================================================
+   DENMOND — Design tokens
+   Change these to re-tune the whole site once the two
+   product photos are final. Everything below reads from
+   these variables — no colors are hardcoded elsewhere.
+   ========================================================= */
+:root {
+  /* Core palette — tuned to the amber/orange badge on the
+     supplied beanies, set against near-black and off-white. */
+  --primary: #0a0a0a;       /* near-black — text, primary surfaces */
+  --secondary: #ffffff;     /* white — inverse text, cards */
+  --background: #f6f5f3;    /* page background, warm-neutral */
+  --surface: #ffffff;       /* card / panel surfaces */
+  --text: #0a0a0a;          /* body text on light surfaces */
+  --text-muted: #6b6b6b;    /* secondary text */
+  --border: #e0ddd8;        /* hairline borders */
+  --accent: #ff5a1f;        /* DENMOND amber-orange, used sparingly */
+  --accent-dim: #c2440f;    /* pressed / hover state of accent */
+  --on-dark: #f6f5f3;       /* text on dark sections */
+  --on-dark-muted: #9c9a96; /* muted text on dark sections */
+
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  --container: 1240px;
+  --gutter: clamp(20px, 5vw, 64px);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
